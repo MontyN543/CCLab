@@ -32,8 +32,11 @@ let signDirection = 1
 let resetCounter = 0
 let resetTriggered = false
 
+//moment change 
+
 function setup() {
-    let canvas = createCanvas(800, 450);
+  createCanvas(800, 450)
+  let canvas = createCanvas(800, 450);
     canvas.id("p5-canvas");
     canvas.parent("p5-canvas-container");
 }
