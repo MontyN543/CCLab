@@ -1,0 +1,8 @@
+<script>start("/Users/alistarmonty/Desktop/CCLab/Project_B/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("assets","assets",1,160,"160 B",1747142242,"5/13/25, 9:17:22 PM");</script>
+<script>addRow("lib","lib",1,128,"128 B",1744948555,"4/18/25, 11:55:55 AM");</script>
+<script>addRow(".DS_Store",".DS_Store",0,6148,"6.0 kB",1747063766,"5/12/25, 11:29:26 PM");</script>
+<script>addRow("index.html","index.html",0,731,"731 B",1744948495,"4/18/25, 11:54:55 AM");</script>
+<script>addRow("sketch.js","sketch.js",0,13604,"13.3 kB",1747106468,"5/13/25, 11:21:08 AM");</script>
+<script>addRow("style.css","style.css",0,147,"147 B",1744948495,"4/18/25, 11:54:55 AM");</script>
