@@ -21,7 +21,7 @@ let targetYear  = 2050;
 let pollutedColor, clearColor, skyCol;
 
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(800,600);
   canvas.parent("p5-canvas-container");
 
   // initialize sky colors
