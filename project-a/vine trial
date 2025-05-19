@@ -1,0 +1,70 @@
+let vines = []
+
+function setup() {
+  let canvas = createCanvas(600, 400);
+  canvas.parent("p5-canvas-container");
+
+
+  let totalVines = 10
+  let spacing = 30
+  let startX = width / 2 - (totalVines / 2) * spacing + spacing / 2
+
+  for (let i = 0; i < totalVines; i++) {
+    let x = startX + i * spacing
+    vines.push(new Vine(x))
+  }
+}
+
+function draw() {
+  background(30, 40, 20)
+
+  for (let vine of vines) {
+    vine.update()
+    vine.display()
+  }
+}
+
+function mousePressed() {
+  for (let vine of vines) {
+    vine.toggleRetract()
+  }
+}
+
+class Vine {
+  constructor(baseX) {
+    this.baseX = baseX
+    this.totalSegments = int(random(30, 50))
+    this.currentSegments = 0
+    this.segmentLength = 8
+    this.amplitude = random(20, 35)
+    this.frequency = random(0.2, 0.3)
+    this.phase = random(TWO_PI)
+    this.retracting = false
+  }
+
+  toggleRetract() {
+    this.retracting = !this.retracting
+  }
+
+  update() {
+    if (this.retracting && this.currentSegments > 0) {
+      this.currentSegments -= 0.5
+    } else if (!this.retracting && this.currentSegments < this.totalSegments) {
+      this.currentSegments += 0.5
+    }
+  }
+
+  display() {
+    stroke(30, 100, 40)
+    strokeWeight(6)
+    noFill()
+
+    beginShape()
+    for (let i = 0; i < int(this.currentSegments); i++) {
+      let y = height - i * this.segmentLength
+      let x = this.baseX + sin(this.phase + i * this.frequency) * this.amplitude
+      vertex(x, y)
+    }
+    endShape()
+  }
+}
